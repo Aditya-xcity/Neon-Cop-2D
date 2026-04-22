@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Cop 2D</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page-glow"></div>
+
+    <main class="game-shell">
+        <header class="hud-panel">
+            <div class="hud-left">
+                <h1>NEON COP 2D</h1>
+                <p class="tagline">Arcade Response Unit</p>
+            </div>
+            <div class="hud-right">
+                <div class="stat-box">SCORE <span id="score">0</span></div>
+                <div class="stat-box">HIGH <span id="highScore">0</span></div>
+                <div class="stat-box">TIME <span id="timer">60</span></div>
+                <div class="stat-box">AMMO <span id="ammo">6</span></div>
+                <div class="stat-box">COMBO <span id="combo">x1</span></div>
+            </div>
+        </header>
+
+        <section class="arena-wrap">
+            <canvas id="gameCanvas" width="960" height="540" aria-label="Neon Cop game arena"></canvas>
+            <div id="flashOverlay"></div>
+
+            <div id="gameOverlay" class="overlay active">
+                <div class="overlay-card">
+                    <h2 id="overlayTitle">READY?</h2>
+                    <p id="overlayMessage">Click start and defend the sector.</p>
+                    <button id="startBtn" type="button">START MISSION</button>
+                    <button id="restartBtn" type="button" class="hidden">RESTART</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="controls-line">
+            <span>Left Click: Shoot</span>
+            <span>R: Reload</span>
+            <span>Enemy +10</span>
+            <span>Civilian -20</span>
+        </footer>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
