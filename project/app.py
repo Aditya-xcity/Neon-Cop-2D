@@ -7,8 +7,13 @@ score_log = []
 
 
 @app.route("/")
-def index():
+def menu():
     return render_template("index.html")
+
+
+@app.route("/game")
+def index():
+    return render_template("game.html")
 
 
 @app.post("/score")
